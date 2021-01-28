@@ -18,3 +18,5 @@ https://en.wikipedia.org/wiki/Maze_generation_algorithm#Randomized_depth-first_s
 
 Luolaston testauksessa voi käyttää esim. Flood filliä:
 https://en.wikipedia.org/wiki/Flood_fill
+
+Aika- ja tilavaativuudesta en osaa vielä tarkkaan sanoa, mutta käytetyt algoritmit ovat suhteellisen kevyitä.
