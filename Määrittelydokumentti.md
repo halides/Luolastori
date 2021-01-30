@@ -1,4 +1,5 @@
 Opinto-ohjelma: Tietojenkäsittelytiede
+
 Projektin kieli: Suomi
 
 Teen "Nystrom-tyylisen" luolastogeneraattorin C++:lla. Referenssiksi: http://journal.stuffwithstuff.com/2014/12/21/rooms-and-mazes/
