@@ -84,7 +84,7 @@ int main(int argc, char* argv[])
     compileroutputter.write ();
 
     // Output XML for Jenkins CPPunit plugin
-    ofstream xmlFileOut("cppTestLuolastoriResults.xml");
+    ofstream xmlFileOut("test_results/cppTestLuolastoriResults.xml");
     XmlOutputter xmlOut(&collectedresults, xmlFileOut);
     xmlOut.write();
 

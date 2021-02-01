@@ -3,12 +3,15 @@ INCLUDES= -I./
 CXXFLAGS = -g $(INCLUDES)
 SRCM= ../luolastori.cpp
 OBJM = $(SRCM:.cpp=.o)
-LINKFLAGS= -lcppunit
 
-testbasicmath: luolastori.cpp $(OBJM)
-		$(CXX) $(CXXFLAGS) -o $@ TestLuolastori.cpp $(OBJM) $(LINKFLAGS) $(LINKFLAGSLOG4) $(LIBLOG)
+luolastori: luolastori.o
+	$(CXX) $(CXXFLAGS) -o luolastori main.cpp luolastori.o
 
-# Default compile
+test: luolastori.o
+		$(CXX) $(CXXFLAGS) -o run_tests test_luolastori.cpp luolastori.o -lcppunit
 
-.cpp.o:
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+clean:
+	rm -f run_tests luolastori test_results/cppTestLuolastoriResults.xml *.o
+
+luolastori.o: luolastori.cpp
+	$(CXX) $(CXXFLAGS) -c luolastori.cpp -o $@
