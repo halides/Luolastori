@@ -1,8 +1,6 @@
 CXX = g++
-INCLUDES= -I./
+INCLUDES= -I./headers
 CXXFLAGS = -g $(INCLUDES)
-SRCM= ../luolastori.cpp
-OBJM = $(SRCM:.cpp=.o)
 
 luolastori: luolastori.o
 	$(CXX) $(CXXFLAGS) -o luolastori main.cpp luolastori.o
