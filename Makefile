@@ -1,8 +1,14 @@
-CC = g++
-CFLAGS = -std=c++17 -Wpedantic -g
+CXX = g++
+INCLUDES= -I./
+CXXFLAGS = -g $(INCLUDES)
+SRCM= ../luolastori.cpp
+OBJM = $(SRCM:.cpp=.o)
+LINKFLAGS= -lcppunit
 
-all:
-	$(CC) $(CFLAGS) luolastori.cpp && ./a.out
+testbasicmath: luolastori.cpp $(OBJM)
+		$(CXX) $(CXXFLAGS) -o $@ TestLuolastori.cpp $(OBJM) $(LINKFLAGS) $(LINKFLAGSLOG4) $(LIBLOG)
 
-clean:
-	$(RM) gol
+# Default compile
+
+.cpp.o:
+	$(CXX) $(CXXFLAGS) -c $< -o $@

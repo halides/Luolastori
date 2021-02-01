@@ -1,7 +1,10 @@
 #include <iostream>
+
+#include "luolastori.hpp"
+
 int luola[10][10];
 
-int main() {
+/*int main() {
 	luola[2][2] = 1;
 	luola[5][8] = 1;
 	for (int i = 0; i<10; i++) {
@@ -13,4 +16,8 @@ int main() {
 		}
 		std::cout << std::endl;
 	}
+}*/
+
+int Luolastori::func1(int x, int y) {
+	return x + y;
 }
