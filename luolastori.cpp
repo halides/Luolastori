@@ -1,5 +1,9 @@
 #include "luolastori.hpp"
 
-int Luolastori::func1(int x, int y) {
-	return x + y;
+void Luola::vuole(int x, int y) {
+	luola[x][y] = 1;
+}
+
+void Luola::tayta(int x, int y) {
+	luola[x][y] = 0;
 }

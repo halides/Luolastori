@@ -49,7 +49,7 @@ TestLuolastori::test_func1(void)
 
 void TestLuolastori::setUp(void)
 {
-    mTestObj = new Luolastori();
+    mTestObj = new Luola();
 }
 
 void TestLuolastori::tearDown(void)
