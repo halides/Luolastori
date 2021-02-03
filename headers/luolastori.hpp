@@ -1,10 +1,10 @@
-#ifndef LUOLASTORI_HPP__
-#define LUOLASTORI_HPP__
+#pragma once
 
-class Luolastori
+class Luola
 {
+	private:
+		luola int[21][21];
 	public:
-		int func1(int x, int y);
+		void vuole(int x, int y);
+		void tayta(int x, int y);
 };
-
-#endif
