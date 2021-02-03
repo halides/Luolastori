@@ -3,8 +3,10 @@
 class Luola
 {
 	private:
-		luola int[21][21];
+		int luola[21][21];
 	public:
+		Luola();
 		void vuole(int x, int y);
 		void tayta(int x, int y);
+		int tila(int x, int y);
 };

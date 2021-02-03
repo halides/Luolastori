@@ -36,7 +36,7 @@ protected:
 
 private:
 
-    Luolastori *mTestObj;
+    Luola mTestObj;
 };
 
 //-----------------------------------------------------------------------------
@@ -44,17 +44,20 @@ private:
 void
 TestLuolastori::test_func1(void)
 {
-    CPPUNIT_ASSERT(5 == mTestObj->func1(2,3));
+    mTestObj.tayta(2,3);
+    CPPUNIT_ASSERT(1 == mTestObj.tila(2,3));
+    mTestObj.vuole(2,3);
+    CPPUNIT_ASSERT(0 == mTestObj.tila(2,3));
 }
 
 void TestLuolastori::setUp(void)
 {
-    mTestObj = new Luola();
+//    mTestObj Luola();
 }
 
 void TestLuolastori::tearDown(void)
 {
-    delete mTestObj;
+//    delete mTestObj;
 }
 
 //-----------------------------------------------------------------------------
