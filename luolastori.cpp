@@ -31,7 +31,7 @@ void Luola::tee_huone(bool pinoa) {
 	int sivu2 = rand() % 3 * 2 + 3;
 	if (x+sivu > 20) return;
 	if (y+sivu2 > 20) return;
-	if (pinoa == true) {
+	if (pinoa == false) {
 		int xx = x;
 		int yy = y;
 		int xs = x+sivu;
