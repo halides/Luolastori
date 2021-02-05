@@ -9,4 +9,5 @@ class Luola
 		void vuole(int x, int y);
 		void tayta(int x, int y);
 		int tila(int x, int y);
+		void tee_huone();
 };

@@ -1,3 +1,5 @@
 luolastori
 *.o
 *.gcov
+*.gcda
+*.gcno
