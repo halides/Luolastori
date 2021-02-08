@@ -68,7 +68,10 @@ void Luola::tee_huone(bool pinoa) {
 void Luola::tee_sokkelot() {
 	for (int i = 1; i<20; i+=2) {
 		for (int j = 1; j<20; j+=2) {
-			if (tila(i,j) == 0) tee_sokkelo(i,j);
+			if (tila(i,j) == 0) {
+				tee_sokkelo(i,j);
+				monesko++;
+			}
 		}
 	}
 }
@@ -125,5 +128,4 @@ void Luola::tee_sokkelo(int x, int y) {
 		break;
 		}
 	}
-	monesko++;
 }
