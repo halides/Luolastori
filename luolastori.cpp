@@ -5,10 +5,10 @@
 
 Luola::Luola() {
 	srand(time(NULL));
-	foo[0] = 0;
-	foo[1] = 1;
-	foo[2] = 2;
-	foo[3] = 3;
+	suunnat[0] = 0;
+	suunnat[1] = 1;
+	suunnat[2] = 2;
+	suunnat[3] = 3;
 
         for (int i = 0; i < 21; i++) {
                 for (int j = 0; j < 21; j++) {
@@ -18,15 +18,15 @@ Luola::Luola() {
 }
 
 void Luola::vuole(int x, int y) {
-	luola[x][y] = 0;
+	luola[y][x] = 0;
 }
 
 void Luola::tayta(int x, int y) {
-	luola[x][y] = 1;
+	luola[y][x] = 1;
 }
 
 int Luola::tila(int x, int y) {
-	return luola[x][y]?1:0;
+	return luola[y][x]?1:0;
 }
 
 void Luola::tee_huone(bool pinoa) {
@@ -74,19 +74,19 @@ void Luola::tee_sokkelot() {
 void Luola::sotke() {
 	int vali;
 	if (rand()%2) {
-		vali = foo[0];
-		foo[0] = foo[3];
-		foo[3] = vali;
+		vali = suunnat[0];
+		suunnat[0] = suunnat[3];
+		suunnat[3] = vali;
 	}
 	if (rand()%2) {
-		vali = foo[0];
-		foo[0] = foo[2];
-		foo[2] = vali;
+		vali = suunnat[0];
+		suunnat[0] = suunnat[2];
+		suunnat[2] = vali;
 	}
 	if (rand()%2) {
-		vali = foo[0];
-		foo[0] = foo[1];
-		foo[1] = vali;
+		vali = suunnat[0];
+		suunnat[0] = suunnat[1];
+		suunnat[1] = vali;
 	}
 }
 
@@ -95,32 +95,32 @@ void Luola::tee_sokkelo(int x, int y) {
 	sotke();
 
 	for (int i=0; i<4; i++) {
-		int suunta = foo[i];
-	switch(suunta) {
+		int suunta = suunnat[i];
+		switch(suunta) {
 		case 0:
-	if ((x+2<21) && tila(x+2,y) == 1) {
-		vuole(x+1,y);
-		tee_sokkelo(x+2,y);
-	}
+			if ((x+2<21) && tila(x+2,y) == 1) {
+				vuole(x+1,y);
+				tee_sokkelo(x+2,y);
+			}
 		break;
 		case 1:
-	if ((x-2>0) && tila(x-2,y) == 1) {
-		vuole(x-1,y);
-		tee_sokkelo(x-2,y);
-	}
+			if ((x-2>0) && tila(x-2,y) == 1) {
+				vuole(x-1,y);
+				tee_sokkelo(x-2,y);
+			}
 		break;
 		case 2:
-	if ((y+2<21) && tila(x,y+2) == 1) {
-		vuole(x,y+1);
-		tee_sokkelo(x,y+2);
-	}
+			if ((y+2<21) && tila(x,y+2) == 1) {
+				vuole(x,y+1);
+				tee_sokkelo(x,y+2);
+			}
 		break;
 		case 3:
-	if ((y-2>0) && tila(x,y-2) == 1) {
-		vuole(x,y-1);
-		tee_sokkelo(x,y-2);
-	}
+			if ((y-2>0) && tila(x,y-2) == 1) {
+				vuole(x,y-1);
+				tee_sokkelo(x,y-2);
+			}
 		break;
-	}
+		}
 	}
 }

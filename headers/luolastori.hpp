@@ -4,7 +4,7 @@ class Luola
 {
 	private:
 		int luola[21][21];
-		int foo[4];
+		int suunnat[4];
 	public:
 		Luola();
 		void vuole(int x, int y);
