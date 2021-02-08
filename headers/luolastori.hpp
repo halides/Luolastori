@@ -4,6 +4,7 @@ class Luola
 {
 	private:
 		int luola[21][21];
+		int foo[4];
 	public:
 		Luola();
 		void vuole(int x, int y);
@@ -12,4 +13,5 @@ class Luola
 		void tee_huone(bool);
 		void tee_sokkelot();
 		void tee_sokkelo(int x, int y);
+		void sotke();
 };

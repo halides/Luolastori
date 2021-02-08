@@ -4,11 +4,18 @@
 
 int main() {
 	Luola l;
+	if (true) {
+	l.tee_huone(true);
+	l.tee_huone(true);
+	l.tee_huone(true);
+	l.tee_huone(true);
+	l.tee_huone(true); } else {
 	l.tee_huone(false);
 	l.tee_huone(false);
 	l.tee_huone(false);
 	l.tee_huone(false);
 	l.tee_huone(false);
+	}
 	l.tee_sokkelot();
 	
 	for (int i = 0; i < 21; i++) {
