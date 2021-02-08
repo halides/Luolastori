@@ -4,7 +4,7 @@
 
 int main() {
 	Luola l;
-	if (true) {
+	if (false) {
 	l.tee_huone(true);
 	l.tee_huone(true);
 	l.tee_huone(true);
