@@ -18,15 +18,15 @@ Luola::Luola() {
 }
 
 void Luola::vuole(int x, int y) {
-	luola[y][x] = 0;
+	luola[x][y] = 0;
 }
 
 void Luola::tayta(int x, int y) {
-	luola[y][x] = 1;
+	luola[x][y] = 1;
 }
 
 int Luola::tila(int x, int y) {
-	return luola[y][x]?1:0;
+	return luola[x][y]?1:0;
 }
 
 void Luola::tee_huone(bool pinoa) {

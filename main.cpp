@@ -15,6 +15,16 @@ int main() {
 	l.tee_huone(false);
 	l.tee_huone(false);
 	l.tee_huone(false);
+	l.tee_huone(false);
+	l.tee_huone(false);
+	l.tee_huone(false);
+	l.tee_huone(false);
+	l.tee_huone(false);
+	l.tee_huone(false);
+	l.tee_huone(false);
+	l.tee_huone(false);
+	l.tee_huone(false);
+	l.tee_huone(false);
 	}
 	l.tee_sokkelot();
 	
