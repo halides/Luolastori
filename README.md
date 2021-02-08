@@ -15,6 +15,7 @@ https://github.com/halides/Luolastori/blob/main/doc/Viikkoraportti5.md
 
 https://github.com/halides/Luolastori/blob/main/doc/Viikkoraportti6.md
 
+```
 p@p-VirtualBox:~/dev/Luolastori$ ./luolastori 
     teen: 11 3 5 7 
 en tehny: 7 1 7 5 
@@ -44,4 +45,5 @@ X X     X   X     X X
 X X XXX XXX X XXXXX X
 X   X       X       X
 XXXXXXXXXXXXXXXXXXXXX
+```
 
