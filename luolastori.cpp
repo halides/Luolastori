@@ -45,7 +45,6 @@ void Luola::tee_huone(bool pinoa) {
 			for (int j = yy-2; j<ys+2; j++) {
 				if (!tila(i,j)) {
 	std::cout << "en tehny: " << x << " " << y << " " << sivu << " " << sivu2 << " " << std::endl << "koska: " << i << " ja " << j << std::endl;
-				
 					return;
 				}
 			}
@@ -56,5 +55,33 @@ void Luola::tee_huone(bool pinoa) {
 		for (int j = y; j<y+sivu2; j++) {
 			vuole(i,j);
 		}
+	}
+}
+
+void Luola::tee_sokkelot() {
+	for (int i = 1; i<20; i+=2) {
+		for (int j = 1; j<20; j+=2) {
+			if (tila(i,j) == 1) tee_sokkelo(i,j);
+		}
+	}
+}
+
+void Luola::tee_sokkelo(int x, int y) {
+	vuole(x,y);
+	if ((x+2<21) && tila(x+2,y) == 1) {
+		vuole(x+1,y);
+		tee_sokkelo(x+2,y);
+	}
+	if ((x-2>0) && tila(x-2,y) == 1) {
+		vuole(x-1,y);
+		tee_sokkelo(x-2,y);
+	}
+	if ((y+2<21) && tila(x,y+2) == 1) {
+		vuole(x,y+1);
+		tee_sokkelo(x,y+2);
+	}
+	if ((y-2>0) && tila(x,y-2) == 1) {
+		vuole(x,y-1);
+		tee_sokkelo(x,y-2);
 	}
 }
