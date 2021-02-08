@@ -5,6 +5,7 @@ class Luola
 	private:
 		int luola[21][21];
 		int suunnat[4];
+		int monesko;
 	public:
 		Luola();
 		void vuole(int x, int y);

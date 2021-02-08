@@ -9,6 +9,7 @@ Luola::Luola() {
 	suunnat[1] = 1;
 	suunnat[2] = 2;
 	suunnat[3] = 3;
+	monesko = 1;
 
         for (int i = 0; i < 21; i++) {
                 for (int j = 0; j < 21; j++) {
@@ -18,15 +19,15 @@ Luola::Luola() {
 }
 
 void Luola::vuole(int x, int y) {
-	luola[x][y] = 0;
+	luola[x][y] = monesko;
 }
 
 void Luola::tayta(int x, int y) {
-	luola[x][y] = 1;
+	luola[x][y] = 0;
 }
 
 int Luola::tila(int x, int y) {
-	return luola[x][y]?1:0;
+	return luola[x][y];
 }
 
 void Luola::tee_huone(bool pinoa) {
@@ -61,12 +62,13 @@ void Luola::tee_huone(bool pinoa) {
 			vuole(i,j);
 		}
 	}
+	monesko++;
 }
 
 void Luola::tee_sokkelot() {
 	for (int i = 1; i<20; i+=2) {
 		for (int j = 1; j<20; j+=2) {
-			if (tila(i,j) == 1) tee_sokkelo(i,j);
+			if (tila(i,j) == 0) tee_sokkelo(i,j);
 		}
 	}
 }
@@ -98,29 +100,30 @@ void Luola::tee_sokkelo(int x, int y) {
 		int suunta = suunnat[i];
 		switch(suunta) {
 		case 0:
-			if ((x+2<21) && tila(x+2,y) == 1) {
+			if ((x+2<21) && tila(x+2,y) == 0) {
 				vuole(x+1,y);
 				tee_sokkelo(x+2,y);
 			}
 		break;
 		case 1:
-			if ((x-2>0) && tila(x-2,y) == 1) {
+			if ((x-2>0) && tila(x-2,y) == 0) {
 				vuole(x-1,y);
 				tee_sokkelo(x-2,y);
 			}
 		break;
 		case 2:
-			if ((y+2<21) && tila(x,y+2) == 1) {
+			if ((y+2<21) && tila(x,y+2) == 0) {
 				vuole(x,y+1);
 				tee_sokkelo(x,y+2);
 			}
 		break;
 		case 3:
-			if ((y-2>0) && tila(x,y-2) == 1) {
+			if ((y-2>0) && tila(x,y-2) == 0) {
 				vuole(x,y-1);
 				tee_sokkelo(x,y-2);
 			}
 		break;
 		}
 	}
+	monesko++;
 }
