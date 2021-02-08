@@ -49,7 +49,7 @@ void Luola::tee_huone(bool pinoa) {
 
 		for (int i = xx-2; i<xs+2; i++) {
 			for (int j = yy-2; j<ys+2; j++) {
-				if (!tila(i,j)) {
+				if (tila(i,j)) {
 	std::cout << "en tehny: " << x << " " << y << " " << sivu << " " << sivu2 << " " << std::endl << "koska: " << i << " ja " << j << std::endl;
 					return;
 				}
