@@ -17,4 +17,5 @@ class Luola
 		int* sotke();
 		void puhko();
 		void tulosta();
+		void fillaa(int x, int y);
 };

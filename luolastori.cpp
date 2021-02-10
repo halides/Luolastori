@@ -94,12 +94,21 @@ void Luola::puhko() {
 				int t2 = tila(j+1,i);
 				if (t) {
 					if (t2 && t2 != t) {
-						vuole(j,i);
+						monesko = t;
+						fillaa(j,i);
 					}
 				}
 			}
 		}
 	}
+}
+
+void Luola::fillaa(int x, int y) {
+	vuole(x,y);
+	if (tila(x+1,y) > 0 && tila(x+1,y) != monesko) fillaa(x+1,y);
+	if (tila(x-1,y) > 0 && tila(x-1,y) != monesko) fillaa(x-1,y);
+	if (tila(x,y+1) > 0 && tila(x,y+1) != monesko) fillaa(x,y+1);
+	if (tila(x,y-1) > 0 && tila(x,y-1) != monesko) fillaa(x,y-1);
 }
 
 
