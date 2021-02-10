@@ -28,6 +28,7 @@ int main() {
 	l.tulosta();
 	l.puhko();
 	l.tulosta();
-	
+	l.poista_umpikujat();
+	l.tulosta();
 }
 

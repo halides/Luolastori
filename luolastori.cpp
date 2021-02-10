@@ -18,6 +18,7 @@ Luola::Luola() {
         }
 }
 
+
 void Luola::tulosta() {
         for (int i = 0; i < 21; i++) { 
                 for (int j = 0; j < 21; j++) { 
@@ -32,13 +33,16 @@ void Luola::vuole(int x, int y) {
 	luola[x][y] = monesko;
 }
 
+
 void Luola::tayta(int x, int y) {
 	luola[x][y] = 0;
 }
 
+
 int Luola::tila(int x, int y) {
 	return luola[x][y];
 }
+
 
 void Luola::tee_huone(bool pinoa) {
 	int x = rand() % 7 * 2 + 1;
@@ -60,13 +64,13 @@ void Luola::tee_huone(bool pinoa) {
 		for (int i = xx; i<xs; i++) {
 			for (int j = yy; j<ys; j++) {
 				if (tila(i,j)) {
-	std::cout << "en tehny: " << x << " " << y << " " << sivu << " " << sivu2 << " " << std::endl << "koska: " << i << " ja " << j << std::endl;
+//	std::cout << "en tehny: " << x << " " << y << " " << sivu << " " << sivu2 << " " << std::endl << "koska: " << i << " ja " << j << std::endl;
 					return;
 				}
 			}
 		}
 	}
-	std::cout << "    teen: " << x << " " << y << " " << sivu << " " << sivu2 << " " << std::endl;
+//	std::cout << "    teen: " << x << " " << y << " " << sivu << " " << sivu2 << " " << std::endl;
 	for (int i = x; i<x+sivu; i++) {
 		for (int j = y; j<y+sivu2; j++) {
 			vuole(i,j);
@@ -74,6 +78,7 @@ void Luola::tee_huone(bool pinoa) {
 	}
 	monesko++;
 }
+
 
 void Luola::tee_sokkelot() {
 	for (int i = 1; i<20; i+=2) {
@@ -85,6 +90,27 @@ void Luola::tee_sokkelot() {
 		}
 	}
 }
+
+
+void Luola::poista_umpikujat() {
+	for (int i = 1; i<20; i+=1) {
+		for (int j = 1; j<20; j+=1) {
+			int laskuri = 0;
+			if (tila(i,j) > 0) {
+				if(tila(i+1,j) == 0) laskuri++;
+				if(tila(i-1,j) == 0) laskuri++;
+				if(tila(i,j+1) == 0) laskuri++;
+				if(tila(i,j-1) == 0) laskuri++;
+				if(laskuri > 2) {
+					tayta(i,j);
+					i--;
+					j--;
+				}
+			}
+		}
+	}
+}
+
 
 void Luola::puhko() {
 	for (int i = 1; i<20; i+=1) {
@@ -102,6 +128,7 @@ void Luola::puhko() {
 		}
 	}
 }
+
 
 void Luola::fillaa(int x, int y) {
 	vuole(x,y);

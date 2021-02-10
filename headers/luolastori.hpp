@@ -13,6 +13,7 @@ class Luola
 		int tila(int x, int y);
 		void tee_huone(bool);
 		void tee_sokkelot();
+		void poista_umpikujat();
 		void tee_sokkelo(int x, int y);
 		int* sotke();
 		void puhko();
