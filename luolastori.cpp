@@ -22,7 +22,8 @@ Luola::Luola() {
 void Luola::tulosta() {
         for (int i = 0; i < 21; i++) { 
                 for (int j = 0; j < 21; j++) { 
-                        std::cout << char(47+tila(j,i)); 
+//                        std::cout << char(47+tila(j,i)); 
+                        std::cout << (tila(j,i)?" ":"X");
                 } 
                 std::cout << std::endl; 
         }
