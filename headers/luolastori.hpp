@@ -14,5 +14,7 @@ class Luola
 		void tee_huone(bool);
 		void tee_sokkelot();
 		void tee_sokkelo(int x, int y);
-		void sotke();
+		int* sotke();
+		void puhko();
+		void tulosta();
 };

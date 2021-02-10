@@ -27,12 +27,9 @@ int main() {
 	l.tee_huone(false);
 	}
 	l.tee_sokkelot();
+	l.tulosta();
+	l.puhko();
+	l.tulosta();
 	
-	for (int i = 0; i < 21; i++) {
-		for (int j = 0; j < 21; j++) {
-			std::cout << char(47+l.tila(j,i));
-		}
-		std::cout << std::endl;
-	}
 }
 

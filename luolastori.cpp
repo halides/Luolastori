@@ -18,6 +18,16 @@ Luola::Luola() {
         }
 }
 
+void Luola::tulosta() {
+        for (int i = 0; i < 21; i++) { 
+                for (int j = 0; j < 21; j++) { 
+                        std::cout << char(47+tila(j,i)); 
+                } 
+                std::cout << std::endl; 
+        }
+}
+
+
 void Luola::vuole(int x, int y) {
 	luola[x][y] = monesko;
 }
@@ -76,7 +86,25 @@ void Luola::tee_sokkelot() {
 	}
 }
 
-void Luola::sotke() {
+void Luola::puhko() {
+	for (int i = 1; i<20; i+=1) {
+		for (int j = 1; j<20; j+=1) {
+			if (tila(j,i) == 0) {
+				int t = tila(j-1,i);
+				int t2 = tila(j+1,i);
+				if (t) {
+					if (t2 && t2 != t) {
+						vuole(j,i);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+int* Luola::sotke() {
 	int vali;
 	if (rand()%2) {
 		vali = suunnat[0];
@@ -93,14 +121,21 @@ void Luola::sotke() {
 		suunnat[0] = suunnat[1];
 		suunnat[1] = vali;
 	}
+	return suunnat;
+//	std::cout << suunnat[0] << suunnat[1] << suunnat[2] << suunnat[3] << std::endl;
 }
 
 void Luola::tee_sokkelo(int x, int y) {
 	vuole(x,y);
-	sotke();
+	int* heh = sotke();
+	int mun_suunnat[4];
+	mun_suunnat[0] = heh[0];
+	mun_suunnat[1] = heh[1];
+	mun_suunnat[2] = heh[2];
+	mun_suunnat[3] = heh[3];
 
 	for (int i=0; i<4; i++) {
-		int suunta = suunnat[i];
+		int suunta = mun_suunnat[i];
 		switch(suunta) {
 		case 0:
 			if ((x+2<21) && tila(x+2,y) == 0) {
