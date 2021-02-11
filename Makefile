@@ -11,5 +11,5 @@ test: luolastori.o test_luolastori.cpp
 clean:
 	rm -f luolastori *.o *.gcno *.gcov *.gcda test_luolastori cppTestLuolastoriResults.xml
 
-luolastori.o: luolastori.cpp
+luolastori.o: luolastori.cpp headers/luolastori.hpp
 	$(CXX) $(CXXFLAGS) -c luolastori.cpp -o $@
