@@ -1,7 +1,11 @@
 # Luolastori
 tiralabra K2021
 
-sudo <pkgdamager> install g++
+```
+sudo <pkgdamager> install g++ && make && ./luolastori
+```
+
+Edit headers/luolastori.hpp defines to change size of room, rerun make etc.
 
 https://github.com/halides/Luolastori/blob/main/doc/M%C3%A4%C3%A4rittelydokumentti.md
 
@@ -17,7 +21,6 @@ https://github.com/halides/Luolastori/blob/main/doc/Viikkoraportti5.md
 
 https://github.com/halides/Luolastori/blob/main/doc/Viikkoraportti6.md
 
-```
 p@p-VirtualBox:~/dev/Luolastori$ ./luolastori 
     teen: 11 3 5 7 
 en tehny: 7 1 7 5 
