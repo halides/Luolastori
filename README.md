@@ -1,6 +1,8 @@
 # Luolastori
 tiralabra K2021
 
+sudo <pkgdamager> install g++
+
 https://github.com/halides/Luolastori/blob/main/doc/M%C3%A4%C3%A4rittelydokumentti.md
 
 https://github.com/halides/Luolastori/blob/main/doc/Viikkoraportti1.md
