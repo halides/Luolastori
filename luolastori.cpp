@@ -11,8 +11,8 @@ Luola::Luola() {
 	suunnat[3] = 3;
 	monesko = 1;
 
-        for (int i = 0; i < 21; i++) {
-                for (int j = 0; j < 21; j++) {
+        for (int i = 0; i < LUOLASTON_KOKO; i++) {
+                for (int j = 0; j < LUOLASTON_KOKO; j++) {
                         tayta(i,j);
                 }
         }
@@ -20,8 +20,8 @@ Luola::Luola() {
 
 
 void Luola::tulosta() {
-        for (int i = 0; i < 21; i++) { 
-                for (int j = 0; j < 21; j++) { 
+        for (int i = 0; i < LUOLASTON_KOKO; i++) { 
+                for (int j = 0; j < LUOLASTON_KOKO; j++) { 
 //                        std::cout << char(47+tila(j,i)); 
                         std::cout << (tila(j,i)?" ":"X");
                 } 
@@ -46,12 +46,12 @@ int Luola::tila(int x, int y) {
 
 
 void Luola::tee_huone(bool pinoa) {
-	int x = rand() % 7 * 2 + 1;
-	int y = rand() % 7 * 2 + 1;
-	int sivu = rand() % 3 * 2 + 3;
-	int sivu2 = rand() % 3 * 2 + 3;
-	if (x+sivu > 20) return;
-	if (y+sivu2 > 20) return;
+	int x = ((rand() % ((LUOLASTON_KOKO-HUONEEN_KOKO-1)/2)) * 2 + 1);
+	int y = ((rand() % ((LUOLASTON_KOKO-HUONEEN_KOKO-1)/2)) * 2 + 1);
+	int sivu = rand() % HUONEEN_KOKO * 2 + 3;
+	int sivu2 = rand() % HUONEEN_KOKO * 2 + 3;
+	if (x+sivu > LUOLASTON_KOKO-1) return;
+	if (y+sivu2 > LUOLASTON_KOKO-1) return;
 	if (pinoa == false) {
 		int xx = x;
 		int yy = y;
@@ -59,8 +59,8 @@ void Luola::tee_huone(bool pinoa) {
 		int ys = y+sivu2;
 		if (x<3) xx = 3;
 		if (y<3) yy = 3;
-		if (x+sivu > 19) xs=19;
-		if (y+sivu2 > 19) ys=19;
+		if (x+sivu > LUOLASTON_KOKO-2) xs=LUOLASTON_KOKO-2;
+		if (y+sivu2 > LUOLASTON_KOKO-2) ys=LUOLASTON_KOKO-2;
 
 		for (int i = xx; i<xs; i++) {
 			for (int j = yy; j<ys; j++) {
@@ -82,8 +82,8 @@ void Luola::tee_huone(bool pinoa) {
 
 
 void Luola::tee_sokkelot() {
-	for (int i = 1; i<20; i+=2) {
-		for (int j = 1; j<20; j+=2) {
+	for (int i = 1; i<LUOLASTON_KOKO-1; i+=2) {
+		for (int j = 1; j<LUOLASTON_KOKO-1; j+=2) {
 			if (tila(i,j) == 0) {
 				tee_sokkelo(i,j);
 				monesko++;
@@ -94,8 +94,10 @@ void Luola::tee_sokkelot() {
 
 
 void Luola::poista_umpikujat() {
-	for (int i = 1; i<20; i+=1) {
-		for (int j = 1; j<20; j+=1) {
+	for (int i = 1; i<LUOLASTON_KOKO-1; i+=1) {
+		for (int j = 1; j<LUOLASTON_KOKO-1; j+=1) {
+//			if (i == 1 && j == 1) continue;
+//			if (i == LUOLASTON_KOKO-1 && j == LUOLASTON_KOKO-1) continue;
 			int laskuri = 0;
 			if (tila(i,j) > 0) {
 				if(tila(i+1,j) == 0) laskuri++;
@@ -114,8 +116,8 @@ void Luola::poista_umpikujat() {
 
 
 void Luola::puhko() {
-	for (int i = 1; i<20; i+=1) {
-		for (int j = 1; j<20; j+=1) {
+	for (int i = 1; i<LUOLASTON_KOKO-1; i+=1) {
+		for (int j = 1; j<LUOLASTON_KOKO-1; j+=1) {
 			if (tila(j,i) == 0) {
 				int t = tila(j-1,i);
 				int t2 = tila(j+1,i);
@@ -175,7 +177,7 @@ void Luola::tee_sokkelo(int x, int y) {
 		int suunta = mun_suunnat[i];
 		switch(suunta) {
 		case 0:
-			if ((x+2<21) && tila(x+2,y) == 0) {
+			if ((x+2<LUOLASTON_KOKO) && tila(x+2,y) == 0) {
 				vuole(x+1,y);
 				tee_sokkelo(x+2,y);
 			}
@@ -187,7 +189,7 @@ void Luola::tee_sokkelo(int x, int y) {
 			}
 		break;
 		case 2:
-			if ((y+2<21) && tila(x,y+2) == 0) {
+			if ((y+2<LUOLASTON_KOKO) && tila(x,y+2) == 0) {
 				vuole(x,y+1);
 				tee_sokkelo(x,y+2);
 			}

@@ -2,32 +2,12 @@
 
 int main() {
 	Luola l;
-	if (false) {
-	l.tee_huone(true);
-	l.tee_huone(true);
-	l.tee_huone(true);
-	l.tee_huone(true);
-	l.tee_huone(true); } else {
-	l.tee_huone(false);
-	l.tee_huone(false);
-	l.tee_huone(false);
-	l.tee_huone(false);
-	l.tee_huone(false);
-	l.tee_huone(false);
-	l.tee_huone(false);
-	l.tee_huone(false);
-	l.tee_huone(false);
-	l.tee_huone(false);
-	l.tee_huone(false);
-	l.tee_huone(false);
-	l.tee_huone(false);
-	l.tee_huone(false);
-	l.tee_huone(false);
-	}
+	for (int i=0; i<LUOLASTON_KOKO; i++)
+		l.tee_huone(false);
 	l.tee_sokkelot();
-	l.tulosta();
+//	l.tulosta();
 	l.puhko();
-	l.tulosta();
+//	l.tulosta();
 	l.poista_umpikujat();
 	l.tulosta();
 }

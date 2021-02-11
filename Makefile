@@ -2,7 +2,7 @@ CXX = g++
 INCLUDES= -I./headers
 CXXFLAGS = -g $(INCLUDES) 
 
-luolastori: luolastori.o main.cpp
+luolastori: luolastori.o main.cpp headers/luolastori.hpp
 	$(CXX) $(CXXFLAGS) -o luolastori main.cpp luolastori.o
 
 test: luolastori.o test_luolastori.cpp
