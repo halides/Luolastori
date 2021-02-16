@@ -3,6 +3,7 @@ tiralabra K2021
 
 ```
 sudo <pkgdamager> install g++ && make && ./luolastori
+sudo <pkgdamager> install cppunit && make test && ./test_luolastori
 ```
 
 Edit headers/luolastori.hpp defines to change size of room, rerun make etc.
