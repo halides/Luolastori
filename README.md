@@ -1,6 +1,8 @@
 # Luolastori
 tiralabra K2021
 
+Developed on Ubuntu 20.04 Focal Fossa
+
 ```
 sudo apt install g++ cppunit
 make && ./luolastori
