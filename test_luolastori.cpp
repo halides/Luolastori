@@ -45,6 +45,7 @@ TestLuolastori::test_luola(void)
 	testL.tee_huone(false);
 	testL.tee_sokkelot();
 	testL.puhko();
+	testL.poista_umpikujat();
 	std::cout << std::endl; testL.tulosta();
 	int jotai = testL.moneenko_fillaa();
 	int jotai2 = testL.montako_tyhjaa();

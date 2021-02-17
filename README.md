@@ -10,6 +10,11 @@ make test && ./test_luolastori
 make clean
 ```
 
+to create coverage report:
+```
+./create_coverage.sh
+```
+
 Edit headers/luolastori.hpp defines to change size of room, rerun make etc.
 
 https://github.com/halides/Luolastori/blob/main/doc/M%C3%A4%C3%A4rittelydokumentti.md

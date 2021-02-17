@@ -226,7 +226,18 @@ int Luola::montako_tyhjaa() {
 
 int Luola::moneenko_fillaa() {
 	monesko++;
-	testi_laskuri = 1;
-	fillaa_testille(1,1,&testi_laskuri);
+	testi_laskuri = 0;
+	int jatka = 0;
+	for (int i = 1; i < LUOLASTON_KOKO-1; i++) {
+		for (int j = 1; j < LUOLASTON_KOKO-1; j++) {
+			if (tila(i,j)>0) {
+				testi_laskuri = 1;
+				fillaa_testille(i,j,&testi_laskuri);
+				jatka = 1;
+			}
+		if (jatka) break;
+		}
+	if (jatka) break;
+	}
 	return testi_laskuri;
 }

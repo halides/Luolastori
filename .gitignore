@@ -1,4 +1,5 @@
 luolastori
+test_luolastori
 *.o
 *.gcov
 *.gcda
