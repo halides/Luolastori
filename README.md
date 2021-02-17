@@ -4,7 +4,7 @@ tiralabra K2021
 Developed on Ubuntu 20.04 Focal Fossa
 
 ```
-sudo apt install g++ cppunit
+sudo apt install g++ libcppunit-dev
 make && ./luolastori
 make test && ./test_luolastori
 make clean
