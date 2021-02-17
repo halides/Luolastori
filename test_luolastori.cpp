@@ -24,40 +24,32 @@ using namespace std;
 class TestLuolastori: public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(TestLuolastori);
-    CPPUNIT_TEST(test_func1);
+    CPPUNIT_TEST(test_luola);
     CPPUNIT_TEST_SUITE_END();
 
-public:
-    void setUp(void);
-    void tearDown(void);
-
 protected:
-    void test_func1(void);
+    void test_luola(void);
 
 private:
 
-    Luola mTestObj;
+    Luola testL;
 };
 
 //-----------------------------------------------------------------------------
 
 void
-TestLuolastori::test_func1(void)
+TestLuolastori::test_luola(void)
 {
-    mTestObj.tayta(2,3);
-    CPPUNIT_ASSERT(1 == mTestObj.tila(2,3));
-    mTestObj.vuole(2,3);
-    CPPUNIT_ASSERT(0 == mTestObj.tila(2,3));
-}
-
-void TestLuolastori::setUp(void)
-{
-//    mTestObj Luola();
-}
-
-void TestLuolastori::tearDown(void)
-{
-//    delete mTestObj;
+	testL.tee_huone(false);
+	testL.tee_huone(false);
+	testL.tee_huone(false);
+	testL.tee_sokkelot();
+	testL.puhko();
+	std::cout << std::endl; testL.tulosta();
+	int jotai = testL.moneenko_fillaa();
+	int jotai2 = testL.montako_tyhjaa();
+	std::cout << std::endl << jotai << " " << jotai2 << std::endl;
+	CPPUNIT_ASSERT(jotai == jotai2);
 }
 
 //-----------------------------------------------------------------------------

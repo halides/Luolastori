@@ -142,6 +142,14 @@ void Luola::fillaa(int x, int y) {
 }
 
 
+void Luola::fillaa_testille(int x, int y, int *laskuri) {
+	vuole(x,y);
+	if (tila(x+1,y) > 0 && tila(x+1,y) != monesko) {(*laskuri)++; fillaa_testille(x+1,y,laskuri);}
+	if (tila(x-1,y) > 0 && tila(x-1,y) != monesko) {(*laskuri)++; fillaa_testille(x-1,y,laskuri);}
+	if (tila(x,y+1) > 0 && tila(x,y+1) != monesko) {(*laskuri)++; fillaa_testille(x,y+1,laskuri);}
+	if (tila(x,y-1) > 0 && tila(x,y-1) != monesko) {(*laskuri)++; fillaa_testille(x,y-1,laskuri);}
+}
+
 
 int* Luola::sotke() {
 	int vali;
@@ -202,4 +210,23 @@ void Luola::tee_sokkelo(int x, int y) {
 		break;
 		}
 	}
+}
+
+
+int Luola::montako_tyhjaa() {
+	int laskuri = 0;
+	for(int i=0;i < LUOLASTON_KOKO; i++) {
+		for(int j=0;j < LUOLASTON_KOKO; j++) {
+			if (tila(j,i) > 0) laskuri++;
+		}
+	}
+	return laskuri;
+}
+
+
+int Luola::moneenko_fillaa() {
+	monesko++;
+	testi_laskuri = 1;
+	fillaa_testille(1,1,&testi_laskuri);
+	return testi_laskuri;
 }
