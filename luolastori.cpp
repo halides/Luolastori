@@ -79,7 +79,7 @@ void Luola::tee_huone(bool pinoa) {
 		}
 	}
 //	std::cout << "    teen: " << x << " " << y << " " << sivu << " " << sivu2 << " " << std::endl;
-//
+
 	//tämä tekee itse huoneen
 	for (int i = x; i<x+sivu; i++) {
 		for (int j = y; j<y+sivu2; j++) {
@@ -157,7 +157,7 @@ void Luola::fillaa(int x, int y) {
 	if (tila(x,y-1) > 0 && tila(x,y-1) != monesko) fillaa(x,y-1);
 }
 
-
+//TESTEJÄ VARTEN
 //sama kuin yllä mutta laskurilla joka laskee montako neliötä filli löysi
 void Luola::fillaa_testille(int x, int y, int *laskuri) {
 	vuole(x,y);
