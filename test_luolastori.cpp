@@ -40,16 +40,31 @@ private:
 void
 TestLuolastori::test_luola(void)
 {
+	int jotai = testL.moneenko_fillaa();
+	int jotai2 = testL.montako_tyhjaa();
+	CPPUNIT_ASSERT(jotai == 0);
+
 	testL.tee_huone(false);
+	jotai = testL.moneenko_fillaa();
+	jotai2 = testL.montako_tyhjaa();
+	CPPUNIT_ASSERT(jotai == jotai2);
+
 	testL.tee_huone(false);
 	testL.tee_huone(false);
 	testL.tee_sokkelot();
+
 	testL.puhko();
+//	std::cout << std::endl; testL.tulosta();
+	jotai = testL.moneenko_fillaa();
+	jotai2 = testL.montako_tyhjaa();
+//	std::cout << std::endl << jotai << " " << jotai2 << std::endl;
+	CPPUNIT_ASSERT(jotai == jotai2);
+
 	testL.poista_umpikujat();
-	std::cout << std::endl; testL.tulosta();
-	int jotai = testL.moneenko_fillaa();
-	int jotai2 = testL.montako_tyhjaa();
-	std::cout << std::endl << jotai << " " << jotai2 << std::endl;
+//	std::cout << std::endl; testL.tulosta();
+//	std::cout << std::endl << jotai << " " << jotai2 << std::endl;
+	jotai = testL.moneenko_fillaa();
+	jotai2 = testL.montako_tyhjaa();
 	CPPUNIT_ASSERT(jotai == jotai2);
 }
 

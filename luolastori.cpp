@@ -225,8 +225,8 @@ int Luola::montako_tyhjaa() {
 
 
 int Luola::moneenko_fillaa() {
-	monesko++;
 	testi_laskuri = 0;
+	monesko++;
 	int jatka = 0;
 	for (int i = 1; i < LUOLASTON_KOKO-1; i++) {
 		for (int j = 1; j < LUOLASTON_KOKO-1; j++) {
@@ -239,5 +239,6 @@ int Luola::moneenko_fillaa() {
 		}
 	if (jatka) break;
 	}
+	monesko++;
 	return testi_laskuri;
 }

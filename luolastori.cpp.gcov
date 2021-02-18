@@ -23,29 +23,29 @@
         1:   19:}
         -:   20:
         -:   21:
-        1:   22:void Luola::tulosta() {
-       22:   23:        for (int i = 0; i < LUOLASTON_KOKO; i++) { 
-      462:   24:                for (int j = 0; j < LUOLASTON_KOKO; j++) { 
+    #####:   22:void Luola::tulosta() {
+    #####:   23:        for (int i = 0; i < LUOLASTON_KOKO; i++) { 
+    #####:   24:                for (int j = 0; j < LUOLASTON_KOKO; j++) { 
         -:   25://                        std::cout << char(47+tila(j,i)); 
-      441:   26:                        std::cout << (tila(j,i)?" ":"X");
+    #####:   26:                        std::cout << (tila(j,i)?" ":"X");
         -:   27:                } 
-       21:   28:                std::cout << std::endl; 
+    #####:   28:                std::cout << std::endl; 
         -:   29:        }
-        1:   30:}
+    #####:   30:}
         -:   31:
         -:   32:
-      387:   33:void Luola::vuole(int x, int y) {
-      387:   34:	luola[x][y] = monesko;
-      387:   35:}
+      627:   33:void Luola::vuole(int x, int y) {
+      627:   34:	luola[x][y] = monesko;
+      627:   35:}
         -:   36:
         -:   37:
-      531:   38:void Luola::tayta(int x, int y) {
-      531:   39:	luola[x][y] = 0;
-      531:   40:}
+      495:   38:void Luola::tayta(int x, int y) {
+      495:   39:	luola[x][y] = 0;
+      495:   40:}
         -:   41:
         -:   42:
-     8277:   43:int Luola::tila(int x, int y) {
-     8277:   44:	return luola[x][y];
+     9629:   43:int Luola::tila(int x, int y) {
+     9629:   44:	return luola[x][y];
         -:   45:}
         -:   46:
         -:   47:
@@ -62,13 +62,13 @@
         3:   58:		int xs = x+sivu;
         3:   59:		int ys = y+sivu2;
        3*:   60:		if (x<3) xx = 3;
-       3*:   61:		if (y<3) yy = 3;
+        3:   61:		if (y<3) yy = 3;
        3*:   62:		if (x+sivu > LUOLASTON_KOKO-2) xs=LUOLASTON_KOKO-2;
        3*:   63:		if (y+sivu2 > LUOLASTON_KOKO-2) ys=LUOLASTON_KOKO-2;
         -:   64:
-       14:   65:		for (int i = xx; i<xs; i++) {
-       62:   66:			for (int j = yy; j<ys; j++) {
-       51:   67:				if (tila(i,j)) {
+       16:   65:		for (int i = xx; i<xs; i++) {
+       42:   66:			for (int j = yy; j<ys; j++) {
+       29:   67:				if (tila(i,j)) {
         -:   68://	std::cout << "en tehny: " << x << " " << y << " " << sivu << " " << sivu2 << " " << std::endl << "koska: " << i << " ja " << j << std::endl;
     #####:   69:					return;
         -:   70:				}
@@ -76,9 +76,9 @@
         -:   72:		}
         -:   73:	}
         -:   74://	std::cout << "    teen: " << x << " " << y << " " << sivu << " " << sivu2 << " " << std::endl;
-       14:   75:	for (int i = x; i<x+sivu; i++) {
-       62:   76:		for (int j = y; j<y+sivu2; j++) {
-       51:   77:			vuole(i,j);
+       16:   75:	for (int i = x; i<x+sivu; i++) {
+       52:   76:		for (int j = y; j<y+sivu2; j++) {
+       39:   77:			vuole(i,j);
         -:   78:		}
         -:   79:	}
         3:   80:	monesko++;
@@ -98,20 +98,20 @@
         -:   94:
         -:   95:
         1:   96:void Luola::poista_umpikujat() {
-      110:   97:	for (int i = 1; i<LUOLASTON_KOKO-1; i+=1) {
-     2270:   98:		for (int j = 1; j<LUOLASTON_KOKO-1; j+=1) {
+       74:   97:	for (int i = 1; i<LUOLASTON_KOKO-1; i+=1) {
+     1514:   98:		for (int j = 1; j<LUOLASTON_KOKO-1; j+=1) {
         -:   99://			if (i == 1 && j == 1) continue;
         -:  100://			if (i == LUOLASTON_KOKO-1 && j == LUOLASTON_KOKO-1) continue;
-     2161:  101:			int laskuri = 0;
-     2161:  102:			if (tila(i,j) > 0) {
-      732:  103:				if(tila(i+1,j) == 0) laskuri++;
-      732:  104:				if(tila(i-1,j) == 0) laskuri++;
-      732:  105:				if(tila(i,j+1) == 0) laskuri++;
-      732:  106:				if(tila(i,j-1) == 0) laskuri++;
-      732:  107:				if(laskuri > 2) {
-       90:  108:					tayta(i,j);
-       90:  109:					i--;
-       90:  110:					j--;
+     1441:  101:			int laskuri = 0;
+     1441:  102:			if (tila(i,j) > 0) {
+      546:  103:				if(tila(i+1,j) == 0) laskuri++;
+      546:  104:				if(tila(i-1,j) == 0) laskuri++;
+      546:  105:				if(tila(i,j+1) == 0) laskuri++;
+      546:  106:				if(tila(i,j-1) == 0) laskuri++;
+      546:  107:				if(laskuri > 2) {
+       54:  108:					tayta(i,j);
+       54:  109:					i--;
+       54:  110:					j--;
         -:  111:				}
         -:  112:			}
         -:  113:		}
@@ -123,10 +123,10 @@
        20:  119:	for (int i = 1; i<LUOLASTON_KOKO-1; i+=1) {
       380:  120:		for (int j = 1; j<LUOLASTON_KOKO-1; j+=1) {
       361:  121:			if (tila(j,i) == 0) {
-      151:  122:				int t = tila(j-1,i);
-      151:  123:				int t2 = tila(j+1,i);
-      151:  124:				if (t) {
-       88:  125:					if (t2 && t2 != t) {
+      155:  122:				int t = tila(j-1,i);
+      155:  123:				int t2 = tila(j+1,i);
+      155:  124:				if (t) {
+       76:  125:					if (t2 && t2 != t) {
         3:  126:						monesko = t;
         3:  127:						fillaa(j,i);
         -:  128:					}
@@ -137,111 +137,112 @@
         1:  133:}
         -:  134:
         -:  135:
-       54:  136:void Luola::fillaa(int x, int y) {
-       54:  137:	vuole(x,y);
-       54:  138:	if (tila(x+1,y) > 0 && tila(x+1,y) != monesko) fillaa(x+1,y);
-       54:  139:	if (tila(x-1,y) > 0 && tila(x-1,y) != monesko) fillaa(x-1,y);
-       54:  140:	if (tila(x,y+1) > 0 && tila(x,y+1) != monesko) fillaa(x,y+1);
-      54*:  141:	if (tila(x,y-1) > 0 && tila(x,y-1) != monesko) fillaa(x,y-1);
-       54:  142:}
+       42:  136:void Luola::fillaa(int x, int y) {
+       42:  137:	vuole(x,y);
+       42:  138:	if (tila(x+1,y) > 0 && tila(x+1,y) != monesko) fillaa(x+1,y);
+       42:  139:	if (tila(x-1,y) > 0 && tila(x-1,y) != monesko) fillaa(x-1,y);
+       42:  140:	if (tila(x,y+1) > 0 && tila(x,y+1) != monesko) fillaa(x,y+1);
+      42*:  141:	if (tila(x,y-1) > 0 && tila(x,y-1) != monesko) fillaa(x,y-1);
+       42:  142:}
         -:  143:
         -:  144:
-      123:  145:void Luola::fillaa_testille(int x, int y, int *laskuri) {
-      123:  146:	vuole(x,y);
-      123:  147:	if (tila(x+1,y) > 0 && tila(x+1,y) != monesko) {(*laskuri)++; fillaa_testille(x+1,y,laskuri);}
-      123:  148:	if (tila(x-1,y) > 0 && tila(x-1,y) != monesko) {(*laskuri)++; fillaa_testille(x-1,y,laskuri);}
-      123:  149:	if (tila(x,y+1) > 0 && tila(x,y+1) != monesko) {(*laskuri)++; fillaa_testille(x,y+1,laskuri);}
-      123:  150:	if (tila(x,y-1) > 0 && tila(x,y-1) != monesko) {(*laskuri)++; fillaa_testille(x,y-1,laskuri);}
-      123:  151:}
+      379:  145:void Luola::fillaa_testille(int x, int y, int *laskuri) {
+      379:  146:	vuole(x,y);
+      379:  147:	if (tila(x+1,y) > 0 && tila(x+1,y) != monesko) {(*laskuri)++; fillaa_testille(x+1,y,laskuri);}
+      379:  148:	if (tila(x-1,y) > 0 && tila(x-1,y) != monesko) {(*laskuri)++; fillaa_testille(x-1,y,laskuri);}
+      379:  149:	if (tila(x,y+1) > 0 && tila(x,y+1) != monesko) {(*laskuri)++; fillaa_testille(x,y+1,laskuri);}
+      379:  150:	if (tila(x,y-1) > 0 && tila(x,y-1) != monesko) {(*laskuri)++; fillaa_testille(x,y-1,laskuri);}
+      379:  151:}
         -:  152:
         -:  153:
-       80:  154:int* Luola::sotke() {
+       84:  154:int* Luola::sotke() {
         -:  155:	int vali;
-       80:  156:	if (rand()%2) {
-       45:  157:		vali = suunnat[0];
-       45:  158:		suunnat[0] = suunnat[3];
-       45:  159:		suunnat[3] = vali;
+       84:  156:	if (rand()%2) {
+       39:  157:		vali = suunnat[0];
+       39:  158:		suunnat[0] = suunnat[3];
+       39:  159:		suunnat[3] = vali;
         -:  160:	}
-       80:  161:	if (rand()%2) {
-       44:  162:		vali = suunnat[0];
-       44:  163:		suunnat[0] = suunnat[2];
-       44:  164:		suunnat[2] = vali;
+       84:  161:	if (rand()%2) {
+       39:  162:		vali = suunnat[0];
+       39:  163:		suunnat[0] = suunnat[2];
+       39:  164:		suunnat[2] = vali;
         -:  165:	}
-       80:  166:	if (rand()%2) {
-       36:  167:		vali = suunnat[0];
-       36:  168:		suunnat[0] = suunnat[1];
-       36:  169:		suunnat[1] = vali;
+       84:  166:	if (rand()%2) {
+       43:  167:		vali = suunnat[0];
+       43:  168:		suunnat[0] = suunnat[1];
+       43:  169:		suunnat[1] = vali;
         -:  170:	}
-       80:  171:	return suunnat;
+       84:  171:	return suunnat;
         -:  172://	std::cout << suunnat[0] << suunnat[1] << suunnat[2] << suunnat[3] << std::endl;
         -:  173:}
         -:  174:
-       80:  175:void Luola::tee_sokkelo(int x, int y) {
-       80:  176:	vuole(x,y);
-       80:  177:	int* heh = sotke();
+       84:  175:void Luola::tee_sokkelo(int x, int y) {
+       84:  176:	vuole(x,y);
+       84:  177:	int* heh = sotke();
         -:  178:	int mun_suunnat[4];
-       80:  179:	mun_suunnat[0] = heh[0];
-       80:  180:	mun_suunnat[1] = heh[1];
-       80:  181:	mun_suunnat[2] = heh[2];
-       80:  182:	mun_suunnat[3] = heh[3];
+       84:  179:	mun_suunnat[0] = heh[0];
+       84:  180:	mun_suunnat[1] = heh[1];
+       84:  181:	mun_suunnat[2] = heh[2];
+       84:  182:	mun_suunnat[3] = heh[3];
         -:  183:
-      400:  184:	for (int i=0; i<4; i++) {
-      320:  185:		int suunta = mun_suunnat[i];
-      320:  186:		switch(suunta) {
-       80:  187:		case 0:
-       80:  188:			if ((x+2<LUOLASTON_KOKO) && tila(x+2,y) == 0) {
-       17:  189:				vuole(x+1,y);
-       17:  190:				tee_sokkelo(x+2,y);
+      420:  184:	for (int i=0; i<4; i++) {
+      336:  185:		int suunta = mun_suunnat[i];
+      336:  186:		switch(suunta) {
+       84:  187:		case 0:
+       84:  188:			if ((x+2<LUOLASTON_KOKO) && tila(x+2,y) == 0) {
+       21:  189:				vuole(x+1,y);
+       21:  190:				tee_sokkelo(x+2,y);
         -:  191:			}
-       80:  192:		break;
-       80:  193:		case 1:
-       80:  194:			if ((x-2>0) && tila(x-2,y) == 0) {
-       17:  195:				vuole(x-1,y);
-       17:  196:				tee_sokkelo(x-2,y);
+       84:  192:		break;
+       84:  193:		case 1:
+       84:  194:			if ((x-2>0) && tila(x-2,y) == 0) {
+       21:  195:				vuole(x-1,y);
+       21:  196:				tee_sokkelo(x-2,y);
         -:  197:			}
-       80:  198:		break;
-       80:  199:		case 2:
-       80:  200:			if ((y+2<LUOLASTON_KOKO) && tila(x,y+2) == 0) {
+       84:  198:		break;
+       84:  199:		case 2:
+       84:  200:			if ((y+2<LUOLASTON_KOKO) && tila(x,y+2) == 0) {
        22:  201:				vuole(x,y+1);
        22:  202:				tee_sokkelo(x,y+2);
         -:  203:			}
-       80:  204:		break;
-       80:  205:		case 3:
-       80:  206:			if ((y-2>0) && tila(x,y-2) == 0) {
-       23:  207:				vuole(x,y-1);
-       23:  208:				tee_sokkelo(x,y-2);
+       84:  204:		break;
+       84:  205:		case 3:
+       84:  206:			if ((y-2>0) && tila(x,y-2) == 0) {
+       19:  207:				vuole(x,y-1);
+       19:  208:				tee_sokkelo(x,y-2);
         -:  209:			}
-       80:  210:		break;
+       84:  210:		break;
         -:  211:		}
         -:  212:	}
-       80:  213:}
+       84:  213:}
         -:  214:
         -:  215:
-        1:  216:int Luola::montako_tyhjaa() {
-        1:  217:	int laskuri = 0;
-       22:  218:	for(int i=0;i < LUOLASTON_KOKO; i++) {
-      462:  219:		for(int j=0;j < LUOLASTON_KOKO; j++) {
-      441:  220:			if (tila(j,i) > 0) laskuri++;
+        4:  216:int Luola::montako_tyhjaa() {
+        4:  217:	int laskuri = 0;
+       88:  218:	for(int i=0;i < LUOLASTON_KOKO; i++) {
+     1848:  219:		for(int j=0;j < LUOLASTON_KOKO; j++) {
+     1764:  220:			if (tila(j,i) > 0) laskuri++;
         -:  221:		}
         -:  222:	}
-        1:  223:	return laskuri;
+        4:  223:	return laskuri;
         -:  224:}
         -:  225:
         -:  226:
-        1:  227:int Luola::moneenko_fillaa() {
-        1:  228:	monesko++;
-        1:  229:	testi_laskuri = 0;
-        1:  230:	int jatka = 0;
-        3:  231:	for (int i = 1; i < LUOLASTON_KOKO-1; i++) {
-       45:  232:		for (int j = 1; j < LUOLASTON_KOKO-1; j++) {
-       43:  233:			if (tila(i,j)>0) {
-        1:  234:				testi_laskuri = 1;
-        1:  235:				fillaa_testille(i,j,&testi_laskuri);
-        1:  236:				jatka = 1;
+        4:  227:int Luola::moneenko_fillaa() {
+        4:  228:	testi_laskuri = 0;
+        4:  229:	monesko++;
+        4:  230:	int jatka = 0;
+       29:  231:	for (int i = 1; i < LUOLASTON_KOKO-1; i++) {
+      513:  232:		for (int j = 1; j < LUOLASTON_KOKO-1; j++) {
+      488:  233:			if (tila(i,j)>0) {
+        3:  234:				testi_laskuri = 1;
+        3:  235:				fillaa_testille(i,j,&testi_laskuri);
+        3:  236:				jatka = 1;
         -:  237:			}
-       43:  238:		if (jatka) break;
+      488:  238:		if (jatka) break;
         -:  239:		}
-        3:  240:	if (jatka) break;
+       28:  240:	if (jatka) break;
         -:  241:	}
-        1:  242:	return testi_laskuri;
-        -:  243:}
+        4:  242:	monesko++;
+        4:  243:	return testi_laskuri;
+        -:  244:}
