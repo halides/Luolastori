@@ -42,6 +42,7 @@ TestLuolastori::test_luola(void)
 {
 	int jotai = testL.moneenko_fillaa();
 	int jotai2 = testL.montako_tyhjaa();
+	CPPUNIT_ASSERT(jotai == jotai2);
 	CPPUNIT_ASSERT(jotai == 0);
 
 	testL.tee_huone(false);

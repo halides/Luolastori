@@ -1,7 +1,7 @@
 #pragma once
 
-#define LUOLASTON_KOKO 21	//THIS HAS TO BE ODD
-#define HUONEEN_KOKO 3
+#define LUOLASTON_KOKO 41	//THIS HAS TO BE ODD
+#define HUONEEN_KOKO 5 
 
 class Luola
 {
@@ -21,11 +21,13 @@ class Luola
 		int testi_laskuri;
 		void fillaa_testille(int x, int y, int *laskuri);
 	public:
-		Luola();
+		Luola(int seed);
 		void tee_huone(bool);	//luo huoneen, bool määrittelee stäkkääkö huoneita päällekkäin vai ei
 		void tee_sokkelot();	//kutsuu tee_sokkeloa jokaiselle parittomalle (x,y)-parille
 		void puhko();		//yhdistää alueet toisiinsa
 		void tulosta();		//tulostaa sokkelon
+		void tulosta_huoneet();		//tulostaa luotujen alueitten määrän
+		void tulosta_vuollut();		//tulostaa tyhjien neliöitten määrän
 		void poista_umpikujat();
 
 		//testejä varten

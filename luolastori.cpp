@@ -3,8 +3,9 @@
 #include <stdlib.h>
 #include <iostream>
 
-Luola::Luola() {
-	srand(time(NULL));	//alusta randomizeri kellosta (sekunnin tarkkuus)
+Luola::Luola(int seed) {
+	if (seed) srand(seed);	//alusta randomizeri passatusta seedistä tai kellosta
+	else srand(time(NULL));
 	suunnat[0] = 0;		//alusta ilmansuunnat
 	suunnat[1] = 1;
 	suunnat[2] = 2;
@@ -17,6 +18,16 @@ Luola::Luola() {
                         tayta(i,j);
                 }
         }
+}
+
+
+void Luola::tulosta_huoneet() {
+	std::cout << "huoneita: " << --monesko << std::endl;
+}
+
+
+void Luola::tulosta_vuollut() {
+	std::cout << "vuollut: " << montako_tyhjaa()  << std::endl;
 }
 
 
