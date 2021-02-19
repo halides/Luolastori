@@ -22,7 +22,7 @@ Luola::Luola(int seed) {
 
 
 void Luola::tulosta_huoneet() {
-	std::cout << "huoneita: " << --monesko << std::endl;
+	std::cout << "huoneita: " << monesko-1 << std::endl;
 }
 
 

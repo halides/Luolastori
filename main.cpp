@@ -11,11 +11,11 @@ int main(int argc, char* argv[]) {
 	for (int i=0; i<LUOLASTON_KOKO; i++)
 		l.tee_huone(false);
 	l.tulosta_huoneet();
-//	l.tulosta();
+	l.tulosta();
 	l.tee_sokkelot();
-//	l.tulosta();
+	l.tulosta();
 	l.puhko();
-//	l.tulosta();
+	l.tulosta();
 	l.poista_umpikujat();
 	l.tulosta_vuollut();
 	l.tulosta();

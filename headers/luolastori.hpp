@@ -1,7 +1,7 @@
 #pragma once
 
-#define LUOLASTON_KOKO 41	//THIS HAS TO BE ODD
-#define HUONEEN_KOKO 5 
+#define LUOLASTON_KOKO 61	//THIS HAS TO BE ODD
+#define HUONEEN_KOKO 7
 
 class Luola
 {
