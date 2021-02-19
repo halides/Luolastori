@@ -1,1 +1,3 @@
-Test coverage, testit ylipäänsä.
+Kaikki testaus, vertaisarviointi.
+
+Kuutisen tuntia.
