@@ -26,11 +26,11 @@ class Luola
 		void tee_sokkelot();	//kutsuu tee_sokkeloa jokaiselle parittomalle (x,y)-parille
 		void puhko();		//yhdistää alueet toisiinsa
 		void tulosta();		//tulostaa sokkelon
-		void tulosta_huoneet();		//tulostaa luotujen alueitten määrän
-		void tulosta_vuollut();		//tulostaa tyhjien neliöitten määrän
 		void poista_umpikujat();
 
 		//testejä varten
 		int montako_tyhjaa();
 		int moneenko_fillaa();
+		void tulosta_huoneet();		//tulostaa luotujen alueitten määrän
+		void tulosta_vuollut();		//tulostaa tyhjien neliöitten määrän
 };
