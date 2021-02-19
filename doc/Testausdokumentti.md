@@ -1,4 +1,4 @@
-Yleistä testauksesta:
+* Yleistä testauksesta:
 
 Testejä varten meillä on ylimääräisiä funktioita: montako_tyhjaa(), moneenko_fillaa(), tulosta_huoneet() ja tulosta_vuollut().
 
@@ -11,12 +11,21 @@ tulosta_huoneet() yksinkertaisesti katsoo int monesko:n perusteella montako huon
 tulosta_vuollut() yksinkertaisesti tulostaa montako_tyhjaa():n palauttaman arvon.
 
 
-Yksikkötestaus:
+* Yksikkötestaus:
 
 Yksikkötestauksessa ajetaan luolaston luonnille tarpeellisia algoritmeja ja soveltuvissa kohdin tarkastellaan että tulokset jotka saadaan montako_tyhjaa():sta ja moneenko_fillaa():sta ovat samat.
 
+Yksikkötestit voi ajaa seuraavasti
+```
+make test
+./test_luolastori
+```
 
-Vertailutestaus:
+Testikattavuuden luonnille on oma skriptinsä:
+`./create_coverage`
+
+
+* Vertailutestaus:
 
 Luolastorin voi ajaa kokonaislukuargumentilla jota käytetään siemenenä satunnaislukugeneraattorille, jolloin esimerkiksi ajamalla ./luolastori 1 saadaan joka kerta samanlainen sokkelo aikaiseksi. Jos argumenttia ei annetaan siemeneksi "sekunteja epochista".
 
