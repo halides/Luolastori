@@ -26,6 +26,8 @@ Edit headers/luolastori.hpp defines to change size of room, rerun make etc.
 
 https://github.com/halides/Luolastori/blob/main/doc/M%C3%A4%C3%A4rittelydokumentti.md
 
+https://github.com/halides/Luolastori/blob/main/doc/Testausdokumentti.md
+
 https://github.com/halides/Luolastori/blob/main/doc/Viikkoraportti1.md
 
 https://github.com/halides/Luolastori/blob/main/doc/Viikkoraportti2.md
