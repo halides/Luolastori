@@ -27,7 +27,7 @@ Testikattavuuden luonnille on oma skriptinsä:
 
 * Vertailutestaus:
 
-Luolastorin voi ajaa kokonaislukuargumentilla jota käytetään siemenenä satunnaislukugeneraattorille, jolloin esimerkiksi ajamalla ./luolastori 1 saadaan joka kerta samanlainen sokkelo aikaiseksi. Jos argumenttia ei annetaan siemeneksi "sekunteja epochista".
+Luolastorin voi ajaa kokonaislukuargumentilla jota käytetään siemenenä satunnaislukugeneraattorille, jolloin esimerkiksi ajamalla ./luolastori 1 saadaan joka kerta samanlainen sokkelo aikaiseksi. Jos argumentti on 0, käytetään siemenenä "sekunteja epochista".
 
 Ajettaessa Luolastori tulostaa luotujen huoneiden lukumäärän sekä montako vuoltua neliötä luolastossa on käyttämällä em. funktioita.
 
