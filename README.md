@@ -14,8 +14,13 @@ to create coverage report:
 ```
 ./create_coverage.sh
 ```
-
 A coverage report that might be a bit outdated: https://github.com/halides/Luolastori/blob/main/luolastori.cpp.gcov
+
+
+to create data for comparisons:
+```
+./create_comparison.sh
+```
 
 Edit headers/luolastori.hpp defines to change size of room, rerun make etc.
 
