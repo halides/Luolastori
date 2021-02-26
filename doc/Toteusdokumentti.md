@@ -2,6 +2,8 @@
 
 Luola-luokka sisältää kaksiulotteisen tietorakenteen (luola[][]) ja metodeita jolla ko. tietorakennetta käsitellään. Käännöksen aikana on määritelty LUOLASTON_KOKO ja HUONEEN_KOKO joita käytetään rajoina sekä käännöksen aikana luola[][]:lle tilavarausta laskettaessa että algortimeissä ajoaikana.
 
+Luola(int) eli konstuktori ottaa kokonaislukuparamterin, jos kokonaisluku on 0 otetaan satunnaislukugeneraattorin siemen kellosta, muuten käytetään siemenenä passattua kokonaislukua. Tällöin esimerkiksi testejä varten luotavien luolastojen tekeminen voidaan toteuttaa epäsatunnaisesti. Konstruktori alustaa tietorakenteet.
+
 tee_huone(bool) kaivertaa luolastoon alueen jonka sivun pituus on minimissään 3:n ja maksimissaan headerissa määritelty HUONEEN_KOKO:n perusteella laskettu yläraja. Jos bool-parametri on tosi, voivat huoneet mennä päällekkäin, muuten päällekkäin tuleva uusi huone hylätään.
 
 tee_sokkelot() on apufunktio joka lähtee luomaan tee_sokkelo():n avulla jokaisesta kaivertamattomasta kohdasta sokkeloa.
