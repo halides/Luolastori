@@ -21,10 +21,6 @@ make test
 ./test_luolastori
 ```
 
-Testikattavuuden luonnille on oma skriptinsä:
-`./create_coverage`
-
-
 * Vertailutestaus:
 
 Luolastorin voi ajaa kokonaislukuargumentilla jota käytetään siemenenä satunnaislukugeneraattorille, jolloin esimerkiksi ajamalla ./luolastori 1 saadaan joka kerta samanlainen sokkelo aikaiseksi. Jos argumentti on 0, käytetään siemenenä "sekunteja epochista".
@@ -46,3 +42,19 @@ Kuvaajista näkee montako huonetta parametreilla luotiin, sekä kuinka monta tyh
 
 * Testikattavuusraportti:
 
+Testikattavuuden luonnille on oma skriptinsä:
+`./create_coverage`
+
+Skripti ilmoittaa:
+
+```
+File 'luolastori.cpp'
+Lines executed:92.22% of 167
+Creating 'luolastori.cpp.gcov'
+```
+
+Kurkkamalla luolastori.cpp.gcov saadaan tarkempi katsaus kattavuudesta:
+
+```
+
+```
