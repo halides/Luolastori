@@ -53,7 +53,7 @@ Lines executed:92.22% of 167
 Creating 'luolastori.cpp.gcov'
 ```
 
-Kurkkamalla luolastori.cpp.gcov saadaan tarkempi katsaus kattavuudesta:
+Kurkkamalla luolastori.cpp.gcov saadaan tarkempi katsaus kattavuudesta. Ainoat rivit joita ei ajeta ovat tulostusrivit joita ei näissä testeissä käytetä (ja en "oikeassa projektissa" tulostausta toteuttaisi edes näin) sekä yksittäinen return, koska kyseisessä testissä huoneet eivät menneet päällekkäin ei ko. returniin ikinä jouduttu:
 
 ```
         -:    0:Source:luolastori.cpp
