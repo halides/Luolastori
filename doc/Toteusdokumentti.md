@@ -12,32 +12,47 @@ poista_umpikujat() poistaa sokkelot jotka eivät johda huoneesta toisiin huoneis
 
 https://github.com/halides/Luolastori/blob/c4259aad7f1199eaa8f44860e4ed1b14c3df03a3/main.cpp esittää kuinka em. metodeita käytetään tuottamaan valmis sokkelo. Se myös tulostaa välivaiheita.
 
+
 * Tilavaativuudet eri tietorakenteille
 
 luola[][] = Theta(N^2).
+
 suunnat = 4*sizeof(int).
+
 monesko = sizeof(int).
 
 * Aikavaativuudet ei-triviaaleille ei-tulostaville algoritmeille
 
 Luola() eli konstruktori: Theta(N^2)
+
 tee_huone(): O(N^2)
+
 tee_sokkelot(): Theta(N^2)
+
 tee_sokkelo(): Theta(N^2) (O(N^2) jos oletetaan että ei olla täysin tyhjässä luolastossa, eli huoneita on luotu)
+
 poista_umpikujat(): Theta(N^2)
+
 puhko(): Theta(N^2)
+
 fillaa(): O(N^2) (Theta(N^2) jos oletaan että ollaan täysin kaiverretussa luolastossa)
 
+
 Testejä varten:
+
 montako_tyhjaa(): Theta(N^2)
+
 moneenko_fillaa(): O(N^2)
+
 fillaa_testille(): O(N^2) (Theta(N^2) jos oletaan että ollaan täysin kaiverretussa luolastossa)
+
 
 * Puutteita / parannusehdotuksia
 
 Rakenne ei ole testiystävällinen mutta mielummin toteutuin ylimääräisiä funktioita testejä varten kuin lähdin refaktoroimaan.
 
 Muita algoritmejä esimerkiksi sokkelon luontiin olisi helppo lisätä. 
+
 
 * Lähteet
 
