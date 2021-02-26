@@ -30,9 +30,6 @@ class TestLuolastori: public CppUnit::TestFixture
 protected:
     void test_luola(void);
 
-private:
-
-    Luola testL;
 };
 
 //-----------------------------------------------------------------------------
@@ -40,6 +37,7 @@ private:
 void
 TestLuolastori::test_luola(void)
 {
+	Luola testL(0);  
 	int jotai = testL.moneenko_fillaa();
 	int jotai2 = testL.montako_tyhjaa();
 	CPPUNIT_ASSERT(jotai == jotai2);
