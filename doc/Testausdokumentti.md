@@ -33,4 +33,16 @@ Ajettaessa Luolastori tulostaa luotujen huoneiden lukumäärän sekä montako vu
 
 Ajettiin kolmesta eri luolastokoko-huonekoko yhdistelmästä (21-3, 41-5, 61-7) kustakin 1000 aineistoa (argumentteina kokonaisluvut 1-1000), https://github.com/halides/Luolastori/blob/main/create_comparison.sh skriptillä
 
-Näistä luotiin https://github.com/halides/Luolastori/tree/main/vertailua löytyvät PDF:t Google Docsin Sheetsillä.
+https://github.com/halides/Luolastori/tree/main/vertailua löytyvät PDF:t joissa myös data joista ao. kuvat luotiin.
+
+Kuvaajista näkee montako huonetta parametreilla luotiin, sekä kuinka monta tyhjää neliötä lopulliseen sokkeloon tuli. Näitä tietoja voisi käyttää esimerkiksei analyysissä kuinka hyvin tämä generaattori sopisi vaikka peleihin tai esimerkiksei tutkimyskäyttöön polunhakualgoritmeja testattaessa.
+
+![21-3](https://github.com/halides/Luolastori/blob/main/doc/img/21-3.png?raw=true)
+
+![41-5](https://github.com/halides/Luolastori/blob/main/doc/img/41-5.png?raw=true)
+
+![61-7](https://github.com/halides/Luolastori/blob/main/doc/img/61-7.png?raw=true)
+
+
+* Testikattavuusraportti:
+
