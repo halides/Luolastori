@@ -1,9 +1,3 @@
-Ohjelman yleisrakenne
-Saavutetut aika- ja tilavaativuudet (m.m. O-analyysit pseudokoodista)
-Suorituskyky- ja O-analyysivertailu (mikäli työ vertailupainotteinen)
-Työn mahdolliset puutteet ja parannusehdotukset
-Lähteet
-
 * Ohjelman yleisrakenne
 
 Luola-luokka sisältää kaksiulotteisen tietorakenteen (luola[][]) ja metodeita jolla ko. tietorakennetta käsitellään. Käännöksen aikana on määritelty LUOLASTON_KOKO ja HUONEEN_KOKO joita käytetään rajoina sekä käännöksen aikana luola[][]:lle tilavarausta laskettaessa että algortimeissä ajoaikana.
