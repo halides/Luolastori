@@ -10,7 +10,7 @@ Luola::Luola(int seed) {
 	suunnat[1] = 1;
 	suunnat[2] = 2;
 	suunnat[3] = 3;
-	monesko = 1;		//alueitten id-laskuri
+	monesko = 1;		//alueitten id-laskuri, alustetaan ykköseksi koska alue 0 seinää
 
 	//alusta luolasto pelkäksi seinäksi
         for (int i = 0; i < LUOLASTON_KOKO; i++) {
@@ -22,7 +22,7 @@ Luola::Luola(int seed) {
 
 
 void Luola::tulosta_huoneet() {
-	std::cout << "huoneita: " << monesko-1 << std::endl;
+	std::cout << "huoneita: " << monesko-1 << std::endl; //huoneilla voisi olla oma laskurinsa, mutta vaatisi refaktorointia johon en nyt lähde
 }
 
 
@@ -42,7 +42,7 @@ void Luola::tulosta() {
 }
 
 
-//>0 on jotain muuta kuin seinää. monekso on alueen id, id:tä käytetään alueiden yhdistämisessä
+//>0 on jotain muuta kuin seinää. monesko on alueen id, id:tä käytetään huoneiden laksennassa ja alueiden yhdistämisessä
 void Luola::vuole(int x, int y) {
 	luola[x][y] = monesko;
 }
@@ -102,7 +102,7 @@ void Luola::tee_huone(bool pinoa) {
 }
 
 
-//lähde tekemään sokkeloa jokaisesta parittomasta (x,y) parista. lisätään alue-id-laskuria jos luotiin alue
+//lähtee tekemään sokkeloa jokaisesta parittomasta (x,y) parista. lisätään alue-id-laskuria jos luotiin alue
 void Luola::tee_sokkelot() {
 	for (int i = 1; i<LUOLASTON_KOKO-1; i+=2) {
 		for (int j = 1; j<LUOLASTON_KOKO-1; j+=2) {
@@ -207,7 +207,7 @@ int* Luola::sotke() {
 //tarvitaan mun_suunnat[] johon kopioidaan lokaali suuntajärjestys.
 //jos vain käytetään globaalia suunnat[]-arraya, rekursio kutsuu sotke() algoritmia
 //joka sekoittaa globaalin suunnat[]-arrayn jolloin lokaalisti ei välttämättä lähdetä joka suuntaan.
-//tämä on sinänsä ihan ok mutta tämä luo yhtenäisemmän luolaston.
+//em. olisi sinänsä ihan ok mutta tämä luo yhtenäisemmän luolaston.
 void Luola::tee_sokkelo(int x, int y) {
 	vuole(x,y);
 	int* g_suunnat = sotke();
@@ -268,7 +268,7 @@ int Luola::montako_tyhjaa() {
 int Luola::moneenko_fillaa() {
 	testi_laskuri = 0;
 	monesko++;
-	int jatka = 0;
+	int jatka = 0; //lippu, halutaan ajaa filli vain kerran
 	for (int i = 1; i < LUOLASTON_KOKO-1; i++) {
 		for (int j = 1; j < LUOLASTON_KOKO-1; j++) {
 			if (tila(i,j)>0) {
@@ -276,7 +276,7 @@ int Luola::moneenko_fillaa() {
 				fillaa_testille(i,j,&testi_laskuri);
 				jatka = 1;
 			}
-		if (jatka) break;
+		if (jatka) break; //halutaan ajaa filli vain kerran
 		}
 	if (jatka) break;
 	}
