@@ -4,7 +4,7 @@
 
 int main(int argc, char* argv[]) {
 	if (argc < 2) {
-		std::cout << "./luolastori <int>" << std::endl;
+		std::cout << "./luolastori <int> #jos int on 0, tulostetaan satunnainen sokkelo" << std::endl;
 		return 1;
 	}
 	Luola l(atoi(argv[1]));
