@@ -31,7 +31,7 @@ Ajettiin kolmesta eri luolastokoko-huonekoko yhdistelmästä (21-3, 41-5, 61-7) 
 
 https://github.com/halides/Luolastori/tree/main/vertailua löytyvät PDF:t joissa myös data joista ao. kuvat luotiin.
 
-Kuvaajista näkee montako huonetta parametreilla luotiin, sekä kuinka monta tyhjää neliötä lopulliseen sokkeloon tuli. Näitä tietoja voisi käyttää esimerkiksei analyysissä kuinka hyvin tämä generaattori sopisi vaikka peleihin tai esimerkiksei tutkimyskäyttöön polunhakualgoritmeja testattaessa.
+Kuvaajista näkee montako huonetta parametreilla luotiin, sekä kuinka monta tyhjää neliötä lopulliseen sokkeloon tuli. Näitä tietoja voisi käyttää esimerkiksei analyysissä kuinka hyvin tämä generaattori sopisi vaikka peleihin tai esimerkiksi tutkimuskäyttöön polunhakualgoritmeja testattaessa.
 
 ![21-3](https://github.com/halides/Luolastori/blob/main/doc/img/21-3.png?raw=true)
 
@@ -53,7 +53,7 @@ Lines executed:92.22% of 167
 Creating 'luolastori.cpp.gcov'
 ```
 
-Kurkkamalla luolastori.cpp.gcov saadaan tarkempi katsaus kattavuudesta. Ainoat rivit joita ei ajeta ovat tulostusrivit joita ei näissä testeissä käytetä (ja en "oikeassa projektissa" tulostausta toteuttaisi edes näin) sekä yksittäinen return, koska kyseisessä testissä huoneet eivät menneet päällekkäin ei ko. returniin ikinä jouduttu:
+Kurkkamalla luolastori.cpp.gcov saadaan tarkempi katsaus kattavuudesta. Ainoat rivit joita ei ajeta ovat tulostusrivit joita ei näissä testeissä käytetä (ja en "oikeassa projektissa" testausta toteuttaisi edes näin) sekä yksittäinen return, koska kyseisessä testissä huoneet eivät menneet päällekkäin ei ko. returniin ikinä jouduttu:
 
 ```
         -:    0:Source:luolastori.cpp
